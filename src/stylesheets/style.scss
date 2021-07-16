@@ -1,0 +1,82 @@
+@import 'reset';
+@import 'fonts';
+
+$text_color: #555;
+$background_color: #FFFFFF;
+$basic_line_height: 16px;
+
+@mixin title_type {
+  font-family:  'KeplerW08', sans-serif;
+  font-size: 1em;
+  line-height:1.3em;
+  font-style:   normal;
+  font-weight: 500;
+}
+
+@mixin body_768 {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin body_414 {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+div, body, p, input {
+  font-family: 'KeplerW08', sans-serif;
+  color: $text_color;
+  text-rendering: optimizeLegibility;
+}
+
+text {
+  font-family: 'KeplerW08', sans-serif;
+  stroke: none;
+}
+
+body {
+  background-color: $background_color;
+  font-family: 'KeplerW08', sans-serif;
+  font-size:15px;
+  line-height: $basic_line_height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+
+input {  
+  -webkit-box-shadow: none;
+  outline: -webkit-focus-ring-color auto 0px;
+  border:none;
+} 
+
+a {
+  text-decoration: none;
+  color:$text_color;
+}
+
+a:hover {
+  opacity:.5;
+  -webkit-transition: all 0.1s ease-out;
+  -moz-transition: all 0.1s ease-out;
+  -ms-transition: all 0.1s ease-out;
+  -o-transition: all 0.1s ease-out;
+  transition: all 0.1s ease-out;
+}
+
+a.wy, a.wy:hover {
+  color: white;
+}
+
+b {
+  font-weight: 600;
+}
+
+.rv-xy-plot__axis__tick__text {
+  fill: #6b6b76;
+  font-size: 9.5px;
+  font-weight: 400;
+}
