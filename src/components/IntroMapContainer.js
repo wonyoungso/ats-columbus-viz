@@ -145,10 +145,69 @@ class IntroMapContainer extends Component {
           'Street',
           '#339cbe',
           /* other */ 'rgba(155, 155, 155, 0.1)'
-          ]
+        ]
       }
     }, "admin-0-boundary-disputed");
 
+  }
+
+  showOnlyText(){
+
+    this.map.addLayer({
+      'id': 'columbus_name_layer',
+      'type': 'symbol',
+      'source': 'columbus_points',
+      'source-layer': 'public.columbus_points',
+      "layout": {
+        "text-offset": [0, -1.5],
+        "text-field": ['get', 'name'],
+        "text-font": ["Spectral SemiBold"],
+        "text-allow-overlap": true,
+        "text-size": [
+          'interpolate',
+          ['linear'],
+          ['zoom'],
+          16,
+          14, // 7
+          22,
+          28 // 14
+        ],
+      },
+      'paint': {
+        // 'text-opacity': [
+        //   'interpolate',
+        //   ['linear'],
+        //   ['zoom'],
+        //   10,
+        //   0,
+        //   11,
+        //   1
+        // ],
+        'text-halo-color': '#352e2c',
+        'text-halo-width': 2,
+        'text-color': [
+          'match',
+          ['get', 'fclass'],
+          'Building',
+          '#ecec0a',
+          'Infrastructure',
+          '#7bca52',
+          'Monument',
+          '#cf5dcc',
+          'Natural Feature',
+          '#2559c8',
+          'Park',
+          '#9770de',
+          'Place',
+          '#d32f65',
+          'School',
+          '#4becee',
+          'Street',
+          '#339cbe',
+          /* other */ 'rgba(155, 155, 155, 0.1)'
+        ]
+      }
+    }, "admin-0-boundary-disputed");
   }
   async handleStyleLoad() {
 
@@ -166,8 +225,8 @@ class IntroMapContainer extends Component {
       "maxZoom": 22
     });
 
-    this.showCityLevelInformation();
-
+    // this.showCityLevelInformation();
+    this.showOnlyText();
 
 
 
@@ -211,34 +270,6 @@ class IntroMapContainer extends Component {
     //   }
     // }, "admin-0-boundary-disputed");
 
-    // this.map.addLayer({
-    //   'id': 'columbus_name_layer',
-    //   'type': 'symbol',
-    //   'source': 'columbus_points',
-    //   'source-layer': 'public.columbus_points',
-    //   "layout": {
-    //     "text-field": ['get', 'name'],
-    //     "text-font": ["Spectral SemiBold"],
-    //     "text-size": [
-    //       'interpolate',
-    //       ['linear'],
-    //       ['zoom'],
-    //       3,
-    //       9,
-    //       7,
-    //       15,
-    //       18,
-    //       22,
-    //       22,
-    //       25
-    //     ],
-    //   },
-    //   'paint': {
-    //     'text-color': "rgba(255, 255, 255, 0.8)",
-    //     "text-halo-color": "#453633",
-    //     "text-halo-width": 2
-    //   }
-    // }, "admin-0-boundary-disputed");
   }
 
   
