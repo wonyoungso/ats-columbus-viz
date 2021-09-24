@@ -170,7 +170,7 @@ class IntroMapContainer extends Component {
           16,
           14, // 7
           22,
-          28 // 14
+          18 // 14
         ],
       },
       'paint': {
@@ -225,8 +225,8 @@ class IntroMapContainer extends Component {
       "maxZoom": 22
     });
 
-    // this.showCityLevelInformation();
-    this.showOnlyText();
+    this.showCityLevelInformation();
+    // this.showOnlyText();
 
 
 

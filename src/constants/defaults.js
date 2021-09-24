@@ -4,6 +4,4 @@ export const DEFAULT_STATE = {
 };
 
 
-export const API_URL = process.env.NODE_ENV === "production" ? 
-  "https://audit-the-streets.dfdev.dataplusfeminism.mit.edu" : 
-  "http://localhost:3000";
+export const API_URL = "https://audit-the-streets.dfdev.dataplusfeminism.mit.edu";
